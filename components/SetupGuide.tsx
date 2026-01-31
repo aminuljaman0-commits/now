@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ExternalLink, ShieldCheck, Key, Settings, Zap, Rocket, Github, Terminal, Copy, AlertCircle, FolderPlus, FileCode, MousePointer2, Save } from 'lucide-react';
 
@@ -103,6 +102,23 @@ const SetupGuide: React.FC = () => {
           <section className="relative pl-10 border-l-2 border-slate-800">
             <div className="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-green-500 border-4 border-slate-950"></div>
             <h3 className="text-lg font-bold text-white mb-2">৩. ফেসবুক ওয়েব হুক</h3>
+            <div className="space-y-4">
+              <p className="text-sm text-slate-400">মেটা পোর্টালে ওয়েব হুক সেটআপ করুন:</p>
+              <div className="bg-slate-800/40 p-5 rounded-2xl space-y-3 border border-slate-700 font-mono">
+                <div>
+                  <p className="text-[10px] text-slate-500 uppercase font-bold">Callback URL</p>
+                  <p className="text-xs text-blue-400">https://your-project.vercel.app/api/webhook</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SetupGuide;            <h3 className="text-lg font-bold text-white mb-2">৩. ফেসবুক ওয়েব হুক</h3>
             <div className="space-y-4">
               <p className="text-sm text-slate-400">মেটা পোর্টালে ওয়েব হুক সেটআপ করুন:</p>
               <div className="bg-slate-800/40 p-5 rounded-2xl space-y-3 border border-slate-700 font-mono">
