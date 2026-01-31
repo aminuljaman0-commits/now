@@ -16,6 +16,16 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["."],
-  "exclude": ["node_modules"]
+  "include": [
+    "App.tsx",
+    "index.tsx",
+    "types.ts",
+    "api/**/*.ts",
+    "components/**/*.tsx",
+    "services/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
