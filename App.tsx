@@ -44,18 +44,19 @@ const App: React.FC = () => {
     <div className="min-h-screen flex bg-slate-950 text-slate-200 font-sans">
       <aside className="w-72 border-r border-slate-800 bg-slate-900/50 hidden lg:flex flex-col shrink-0">
         <div className="p-8 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
+          <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
             <Zap className="text-white w-6 h-6" />
           </div>
-          <h1 className="font-bold text-xl tracking-tight text-white italic">FB AutoPro</h1>
+          <h1 className="font-bold text-xl text-white">FB AutoPro</h1>
         </div>
         <nav className="flex-1 px-4 space-y-2 mt-4">
-          <button onClick={() => setActiveTab(AppTab.DASHBOARD)} className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all ${activeTab === AppTab.DASHBOARD ? 'bg-blue-600 text-white shadow-lg' : 'hover:bg-slate-800 text-slate-400 hover:text-white'}`}><LayoutDashboard size={20} /> ড্যাশবোর্ড</button>
-          <button onClick={() => setActiveTab(AppTab.SETTINGS)} className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all ${activeTab === AppTab.SETTINGS ? 'bg-blue-600 text-white shadow-lg' : 'hover:bg-slate-800 text-slate-400 hover:text-white'}`}><Settings size={20} /> সেটিংস</button>
-          <button onClick={() => setActiveTab(AppTab.LOGS)} className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all ${activeTab === AppTab.LOGS ? 'bg-blue-600 text-white shadow-lg' : 'hover:bg-slate-800 text-slate-400 hover:text-white'}`}><History size={20} /> লগ</button>
-          <button onClick={() => setActiveTab(AppTab.GUIDE)} className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all ${activeTab === AppTab.GUIDE ? 'bg-blue-600 text-white shadow-lg' : 'hover:bg-slate-800 text-slate-400 hover:text-white'}`}><BookOpen size={20} /> গাইড</button>
+          <button onClick={() => setActiveTab(AppTab.DASHBOARD)} className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl ${activeTab === AppTab.DASHBOARD ? 'bg-blue-600 text-white' : 'hover:bg-slate-800'}`}> <LayoutDashboard size={20} /> ড্যাশবোর্ড </button>
+          <button onClick={() => setActiveTab(AppTab.SETTINGS)} className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl ${activeTab === AppTab.SETTINGS ? 'bg-blue-600 text-white' : 'hover:bg-slate-800'}`}> <Settings size={20} /> সেটিংস </button>
+          <button onClick={() => setActiveTab(AppTab.LOGS)} className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl ${activeTab === AppTab.LOGS ? 'bg-blue-600 text-white' : 'hover:bg-slate-800'}`}> <History size={20} /> লগ </button>
+          <button onClick={() => setActiveTab(AppTab.GUIDE)} className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl ${activeTab === AppTab.GUIDE ? 'bg-blue-600 text-white' : 'hover:bg-slate-800'}`}> <BookOpen size={20} /> গাইড </button>
         </nav>
       </aside>
+
       <main className="flex-1 overflow-y-auto">
         <header className="h-20 border-b border-slate-800 bg-slate-950/80 flex items-center px-6 sticky top-0 z-40 backdrop-blur-xl">
           <h2 className="text-xl font-bold text-white">ড্যাশবোর্ড</h2>
@@ -71,38 +72,7 @@ const App: React.FC = () => {
   );
 };
 
-export default App;               <Activity size={14} className={systemStatus?.isReady ? 'text-green-400' : 'text-red-400'} />
-               <span className="text-xs font-semibold text-slate-300">
-                 {systemStatus?.isReady ? 'Backend Live' : 'Backend Incomplete'}
-               </span>
-             </div>
-          </div>
-        </header>
-
-        <div className="p-6 md:p-12">
-          {activeTab === AppTab.DASHBOARD && (
-            <Dashboard 
-              config={config} 
-              isBotRunning={isBotRunning} 
-              logs={logs}
-              systemStatus={systemStatus}
-              onSimulateTrigger={() => addLog('PageAdmin', config.triggerKeyword, 'triggered')}
-              onGoToGuide={() => setActiveTab(AppTab.GUIDE)}
-            />
-          )}
-          {activeTab === AppTab.SETTINGS && (
-            <ConfigForm config={config} setConfig={setConfig} systemStatus={systemStatus} />
-          )}
-          {activeTab === AppTab.LOGS && (
-            <LogViewer logs={logs} />
-          )}
-          {activeTab === AppTab.GUIDE && (
-            <SetupGuide />
-          )}
-        </div>
-      </main>
-
-      {/* Mobile Navigation */}
+export default App;      {/* Mobile Navigation */}
       <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-slate-900/95 border-t border-slate-800 backdrop-blur-lg flex justify-around items-center p-3 z-50">
         <button onClick={() => setActiveTab(AppTab.DASHBOARD)} className={`flex flex-col items-center gap-1 transition-colors ${activeTab === AppTab.DASHBOARD ? 'text-blue-500' : 'text-slate-400'}`}>
           <LayoutDashboard size={20} />
